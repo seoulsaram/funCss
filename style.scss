@@ -1,173 +1,270 @@
-body{
-    display: flex;
+/* gap 사용하기!!
+flex box에서 각 박스 사이의 공간을 주고 싶을 때
+각각의 박스마다 margin/padding을 줄 필요 없이 gap을 사용하면 된다! */
+body {
+  display: flex;
+  gap: 10px 10px;
 }
-.first{
-    border-right: 1px solid gainsboro;
-    padding-right: 10px;
-}
-.second{
-    padding-left: 10px;
-}
-
-.third{
-    padding-left: 10px;
-
+.first {
+  border-right: 1px solid gainsboro;
 }
 
 /* 박스에 마우스를 대보세요. */
-.box{
-    width: 30px;
-    height: 30px;
-    background-color: grey;
+.box {
+  width: 30px;
+  height: 30px;
+  background-color: grey;
 }
-.box:hover{
-    background-color: hotpink;
-    width: 120px;
-    transition: all 1s 500ms steps(6);
-    /* time 옵션을 2개 주면 뒤에 준 시간 뒤에 transition이 먹힘
+.box:hover {
+  background-color: hotpink;
+  width: 120px;
+  transition: all 1s 500ms steps(6);
+  /* time 옵션을 2개 주면 뒤에 준 시간 뒤에 transition이 먹힘
     500ms 뒤에 1초에 걸쳐 6스텝으로 효과가 나타난다. */
 }
 
 /* 쉬운 탭 디자인 만들기 */
-.title{
-    padding: .2em .5em;
-    margin-top: 0;
-    border-left: 10px solid hotpink;
-    background: lightblue;
+.title {
+  padding: 0.2em 0.5em;
+  margin-top: 0;
+  border-left: 10px solid hotpink;
+  background: lightblue;
 }
 
 /* 글자에 그라디언트 넣기 */
-.text-gradient{
-    margin-top: 0;
-    background: linear-gradient(blue,red);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color:transparent;
-    
+.text-gradient {
+  margin-top: 0;
+  background: linear-gradient(blue, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* 텍스트 에리어 리사이즈 none */
-textarea{
-    resize: none;
+textarea {
+  resize: none;
 }
 
 /* 화면 사이즈 넘어가는 텍스트를 알아서 줄바꿈 */
-.wordWrap{
-    word-wrap: break-word;
+.wordWrap {
+  word-wrap: break-word;
 }
 
 /* 문자열 첫글자만 스타일주기 + 첫번째 라인만 스타일 주기 */
-.letter::first-letter{
-    font-size: 20px;
-    font-weight: bold;
-    color: royalblue !important;
+.letter::first-letter {
+  font-size: 20px;
+  font-weight: bold;
+  color: royalblue !important;
 }
-.letter::first-line{
-    color: pink;
+.letter::first-line {
+  color: pink;
 }
 
 /* 글자를 넣지 않은 빈 div에만 따로 스타일을 줄 수 있어요. */
-.emptyBox{
-    background: saddlebrown;
-    color: white;
-    padding: 10px;
+.emptyBox {
+  background: saddlebrown;
+  color: white;
+  padding: 10px;
 }
-.emptyBox:empty{
-    background: wheat;
+.emptyBox:empty {
+  background: wheat;
 }
 
 /* firt-of-type 연습! content 밑에 p타입의 첫번째 아이에게 스타일주기*/
-#content p:first-of-type{
-    color: violet;
+#content p:first-of-type {
+  color: violet;
 }
 
 /* text-shadow 주기! */
-.sd{
-    text-shadow: 5px 5px yellowgreen;
+.sd {
+  text-shadow: 5px 5px yellowgreen;
 }
 
 /* list 스타일 포지션 + 마커 스타일 */
-.bg{
-    background: goldenrod;
+.bg {
+  background: goldenrod;
 }
-.bg::marker{
-    color: green;
+.bg::marker {
+  color: green;
 }
-.lsp{
-    list-style-position: inside;
+.lsp {
+  list-style-position: inside;
 }
 
 /* 문장 들여쓰기 */
-.ti{
-    text-indent: 10px;
+.ti {
+  text-indent: 10px;
 }
 
 /* 글자 뒤집기 */
-.wm{
-    writing-mode: vertical-lr;
+.wm {
+  writing-mode: vertical-lr;
 }
 /* zoom으로 요소 확대하기 */
-.zoom{
-    width: 50px;
-    height: 50px;
-    background: green;
-    margin-bottom: 4px;
+.zoom {
+  width: 50px;
+  height: 50px;
+  background: green;
+  margin-bottom: 4px;
 }
-.z{
-    zoom: 130%;
+.z {
+  zoom: 130%;
 }
 
 /* 애니메이션~ */
-.ani{
-    margin-top: 0;
-    animation-duration: 3s;
-    animation-name: slide;
+.ani {
+  margin-top: 0;
+  animation-duration: 3s;
+  animation-name: slide;
 }
-@keyframes slide{
-    from{
-        margin-left: 100%;
-    }
-    to{
-        margin-left: 0%;
-    }
+@keyframes slide {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
 }
 
-.changeColor{
-    width: 50px;
-    height: 50px;
-    border: solid 1px;
-    animation-duration: 3s;
-    animation-name: changeCl;
+.changeColor {
+  width: 50px;
+  height: 50px;
+  border: solid 1px;
+  animation-duration: 3s;
+  animation-name: changeCl;
 }
 @keyframes changeCl {
-    0%{
-        background: gold;
-    }
-    50%{
-        background: black;
-    }
-    100%{
-        background: lightcoral;
-    }
+  0% {
+    background: gold;
+  }
+  50% {
+    background: black;
+  }
+  100% {
+    background: lightcoral;
+  }
 }
 
 /* scss의 extend기능을 사용하여 스타일 주기 */
-%t{
+%t {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  margin-bottom: 4px;
+}
+
+.box1 {
+  @extend %t;
+  background: blanchedalmond;
+}
+
+.box2 {
+  @extend %t;
+  background: cadetblue;
+}
+.box3 {
+  @extend %t;
+  background: chocolate;
+}
+
+/* @supports 사용해보기 */
+/* 브라우저가 display grid를 support하는지 안 하는지에 따라
+각기 다른 효과를 줄 수 있다! */
+.supports {
+  div {
     width: 50px;
     height: 50px;
-    border: 1px solid black;
-    margin-bottom: 4px
+    margin-bottom: 4px;
+    background: blueviolet;
+  }
+}
+@supports (display: grid) {
+  .supports {
+    display: grid;
+  }
+}
+@supports not (display: grid) {
+  .supports {
+    display: flex;
+  }
 }
 
-.box1{
-    @extend %t;
-    background: blanchedalmond;
+#container {
+  width: 150px;
+  height: 150px;
+  overflow: auto;
+  /* ADD THIS TO THE PARENT */
+  scroll-snap-align: y mandatory;
+}
+.item {
+  /* ADD THIS TO THE CHILD */
+  scroll-snap-align: center;
+  display: inline-block;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
 }
 
-.box2{
-    @extend %t;
-    background: cadetblue;
+.item:nth-child(odd) {
+  background: chocolate;
 }
-.box3{
-    @extend %t;
-    background: chocolate;
+.item:nth-child(even) {
+  background: cornflowerblue;
+}
+
+/* is seudo selector 사용해보기 */
+/* 첫번째 코드를 두번째처럼 바꿀 수 있음.
+header나 nave가 있으면 그 안에 있는 button 선택해서 스타일 주기! */
+// header button,
+// nav button {
+//   width: 60px;
+//   height: 20px;
+//   background-color: tomato;
+// }
+:is(header, nav) button {
+  width: 60px;
+  height: 20px;
+  background-color: tomato;
+}
+
+/* 이미지나 비디오의 비율을 정할 수 있는 aspect-ratio 사용해보기! */
+.exp {
+  width: 100px;
+  aspect-ratio: 16 / 9;
+  // aspect-ratio: 1 / 1; /* width and height are equal proportion */
+  // aspect-ratio: 2 / 1; /* width is twice the height*/
+  // aspect-ratio: 1 / 2; /* width is half the height */
+  // aspect-ratio: 16 / 9  /* typical video aspect ratio */
+  // aspect-ratio: auto 4 / 3; /* width:height, unless it's a replaced element */
+}
+
+/* sticky 활용해서 유저의 스크롤을 따라다니는 header 만들기*/
+#container2 {
+  width: 150px;
+  height: 400px;
+  overflow: auto;
+  section {
+    background-color: tomato;
+    /* 2. 정의된 높이가 있는 컨테이너 안에 그 요소를 넣으면 된다! */
+    height: 70%;
+    width: 100%;
+    margin: 35px 0px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  aside {
+    background-color: teal;
+    height: 50px;
+    width: 100%;
+    /* 1. 원하는 요소에 position sticky를 넣고 */
+    position: sticky;
+    top: 0px;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

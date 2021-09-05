@@ -1,86 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- gap 사용하기!! -->
+    <div class="bigBox first">
+      박스에 마우스를 대보세요.
+      <div class="box"></div>
 
-<div class="bigBox first">
-        박스에 마우스를 대보세요.
-<div class="box"></div>
+      쉬운 탭 디자인 만들기
+      <h3 class="title">Fun CSS</h3>
 
-쉬운 탭 디자인 만들기
-<h3 class="title">Fun CSS</h3>
+      글자에 그라디언트 넣기
+      <h3 class="text-gradient">Text Gradient</h3>
 
-글자에 그라디언트 넣기
-<h3 class="text-gradient">Text Gradient</h3>
+      텍스트 에리어 리사이즈 none<br />
+      <textarea></textarea>
 
-텍스트 에리어 리사이즈 none<br/>
-<Textarea></Textarea>
-
-
-<p class="wordWrap">화면 사이즈 넘어가는 텍스트를 알아서 줄바꿈 해주는 스타일. 화면을 리사이즈 해보세용. 용용용</p>
-<hr/>
-문자열 첫글자만 스타일주기 + 첫번째 라인만 스타일 주기. 화면을 리사이즈 해서 줄바꿈 되는 글자들에는 스타일이 사라져요.
-<p class="letter">Bon's Fun CSSBon's Fun CSSBon's Fun CSSBon's Fun CSSBon's Fun CSSBon's Fun CSS</p>
-<hr/>
-글자를 넣지 않은 빈 div에만 따로 스타일을 줄 수 있어요.
-<div class="emptyBox">not Empty</div>
-<div class="emptyBox"></div>
-<div class="emptyBox">not Empty</div>
+      <p class="wordWrap">
+        화면 사이즈 넘어가는 텍스트를 알아서 줄바꿈 해주는 스타일. 화면을 리사이즈 해보세용. 용용용
+      </p>
+      <hr />
+      문자열 첫글자만 스타일주기 + 첫번째 라인만 스타일 주기. 화면을 리사이즈 해서 줄바꿈 되는 글자들에는
+      스타일이 사라져요.
+      <p class="letter">Bon's Fun CSSBon's Fun CSSBon's Fun CSSBon's Fun CSSBon's Fun CSSBon's Fun CSS</p>
+      <hr />
+      글자를 넣지 않은 빈 div에만 따로 스타일을 줄 수 있어요.
+      <div class="emptyBox">not Empty</div>
+      <div class="emptyBox"></div>
+      <div class="emptyBox">not Empty</div>
     </div>
 
-
     <div class="bigBox second">
-        firt-of-type 연습!
-<div id="content">
-    <h3>title</h3>
-    <p>aaa</p>
-    <p>bbb</p>
-    <p>ccc</p>
-</div>
-<hr/>
-text-shadow 주기!
-<p class="sd">Hello BON!</p>
+      firt-of-type 연습!
+      <div id="content">
+        <h3>title</h3>
+        <p>aaa</p>
+        <p>bbb</p>
+        <p>ccc</p>
+      </div>
+      <hr />
+      text-shadow 주기!
+      <p class="sd">Hello BON!</p>
 
-<hr/>
-list 스타일 포지션 + 마커 스타일
-<ul class="lsp">
-    <li class="bg">list1</li>
-    <li class="bg">list2</li>
-    <li class="bg">list3</li>
-</ul>
+      <hr />
+      list 스타일 포지션 + 마커 스타일
+      <ul class="lsp">
+        <li class="bg">list1</li>
+        <li class="bg">list2</li>
+        <li class="bg">list3</li>
+      </ul>
 
-<br/>
-문장 들여쓰기
-<p class="ti">hi</p>
-<p>my name is</p>
-<p>someone</p>
-<br/>
-글자 뒤집기
-<p class="wm">ABC</p>
-<br/>
-zoom으로 요소 확대하기
-<div class="zoom"></div>
-<div class="zoom z"></div>
-</div>
-<div class="bigBox third">
-애니메이션~
-<h2 class="ani">WOW</h2>
-<hr/>
-색깔 체인지 애니메이션
-<div class="changeColor"></div>
-<hr/>
-scss의 extend기능을 사용하여 스타일 주기
-<div class="box1"></div>
-<div class="box2"></div>
-<div class="box3"></div>
-</div>
+      <br />
+      문장 들여쓰기
+      <p class="ti">hi</p>
+      <p>my name is</p>
+      <p>someone</p>
+      <br />
+      글자 뒤집기
+      <p class="wm">ABC</p>
+      <br />
+      zoom으로 요소 확대하기
+      <div class="zoom"></div>
+      <div class="zoom z"></div>
+    </div>
+    <div class="bigBox third">
+      애니메이션~
+      <h2 class="ani">WOW</h2>
+      <hr />
+      색깔 체인지 애니메이션
+      <div class="changeColor"></div>
+      <hr />
+      scss의 extend기능을 사용하여 스타일 주기
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
 
+      <hr />
+      @supports 사용해보기
+      <div class="supports">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
 
-</body>
+    <div class="bigBox fourth">
+      <hr />
+      <h4>scroll-snap-type 사용해보기</h4>
+      <br />
+      <div id="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+      </div>
+
+      <hr />
+      is seudo selector 사용해보기
+      <header>
+        <nav>
+          <button></button>
+        </nav>
+        <button></button>
+      </header>
+      <hr />
+      이미지나 비디오의 비율을 정할 수 있는 aspect-ratio 사용해보기!<br />
+      <img class="exp" src="./example.jpeg" alt="" />
+      <hr />
+      sticky 활용해서 유저의 스크롤을 따라다니는 header 만들기
+      <div id="container2">
+        <section>
+          <aside>Header</aside>
+        </section>
+        <section>
+          <aside>Header</aside>
+        </section>
+        <section>
+          <aside>Header</aside>
+        </section>
+        <section>
+          <aside>Header</aside>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>
