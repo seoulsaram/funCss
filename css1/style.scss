@@ -1,14 +1,10 @@
-@charset "UTF-8";
 /* gap 사용하기!!
 flex box에서 각 박스 사이의 공간을 주고 싶을 때
 각각의 박스마다 margin/padding을 줄 필요 없이 gap을 사용하면 된다! */
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 10px 10px;
 }
-
 .first {
   border-right: 1px solid gainsboro;
 }
@@ -19,11 +15,9 @@ body {
   height: 30px;
   background-color: grey;
 }
-
 .box:hover {
   background-color: hotpink;
   width: 120px;
-  -webkit-transition: all 1s 500ms steps(6);
   transition: all 1s 500ms steps(6);
   /* time 옵션을 2개 주면 뒤에 준 시간 뒤에 transition이 먹힘
     500ms 뒤에 1초에 걸쳐 6스텝으로 효과가 나타난다. */
@@ -40,7 +34,6 @@ body {
 /* 글자에 그라디언트 넣기 */
 .text-gradient {
   margin-top: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(blue), to(red));
   background: linear-gradient(blue, red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -62,7 +55,6 @@ textarea {
   font-weight: bold;
   color: royalblue !important;
 }
-
 .letter::first-line {
   color: pink;
 }
@@ -73,7 +65,6 @@ textarea {
   color: white;
   padding: 10px;
 }
-
 .emptyBox:empty {
   background: wheat;
 }
@@ -92,11 +83,9 @@ textarea {
 .bg {
   background: goldenrod;
 }
-
 .bg::marker {
   color: green;
 }
-
 .lsp {
   list-style-position: inside;
 }
@@ -108,11 +97,8 @@ textarea {
 
 /* 글자 뒤집기 */
 .wm {
-  -webkit-writing-mode: vertical-lr;
-      -ms-writing-mode: tb-lr;
-          writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
 }
-
 /* zoom으로 요소 확대하기 */
 .zoom {
   width: 50px;
@@ -120,7 +106,6 @@ textarea {
   background: green;
   margin-bottom: 4px;
 }
-
 .z {
   zoom: 130%;
 }
@@ -128,21 +113,9 @@ textarea {
 /* 애니메이션~ */
 .ani {
   margin-top: 0;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-name: slide;
-          animation-name: slide;
+  animation-duration: 3s;
+  animation-name: slide;
 }
-
-@-webkit-keyframes slide {
-  from {
-    margin-left: 100%;
-  }
-  to {
-    margin-left: 0%;
-  }
-}
-
 @keyframes slide {
   from {
     margin-left: 100%;
@@ -156,24 +129,9 @@ textarea {
   width: 50px;
   height: 50px;
   border: solid 1px;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-name: changeCl;
-          animation-name: changeCl;
+  animation-duration: 3s;
+  animation-name: changeCl;
 }
-
-@-webkit-keyframes changeCl {
-  0% {
-    background: gold;
-  }
-  50% {
-    background: black;
-  }
-  100% {
-    background: lightcoral;
-  }
-}
-
 @keyframes changeCl {
   0% {
     background: gold;
@@ -187,7 +145,7 @@ textarea {
 }
 
 /* scss의 extend기능을 사용하여 스타일 주기 */
-.box1, .box2, .box3 {
+%t {
   width: 50px;
   height: 50px;
   border: 1px solid black;
@@ -195,79 +153,77 @@ textarea {
 }
 
 .box1 {
+  @extend %t;
   background: blanchedalmond;
 }
 
 .box2 {
+  @extend %t;
   background: cadetblue;
 }
-
 .box3 {
+  @extend %t;
   background: chocolate;
 }
 
 /* @supports 사용해보기 */
 /* 브라우저가 display grid를 support하는지 안 하는지에 따라
 각기 다른 효과를 줄 수 있다! */
-.supports div {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 4px;
-  background: blueviolet;
+.supports {
+  div {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 4px;
+    background: blueviolet;
+  }
 }
-
 @supports (display: grid) {
   .supports {
-    display: -ms-grid;
     display: grid;
   }
 }
-
 @supports not (display: grid) {
   .supports {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
 }
 
-#container {
+.scroll-container,
+.scroll-area {
   width: 150px;
   height: 150px;
+}
+.scroll-container {
   overflow: auto;
   /* ADD THIS TO THE PARENT */
-  scroll-snap-align: y mandatory;
+  scroll-snap-type: y mandatory;
 }
-
 .item {
   /* ADD THIS TO THE CHILD */
   scroll-snap-align: center;
   display: inline-block;
-  width: 100%;
-  height: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 38px;
 }
 
 .item:nth-child(odd) {
   background: chocolate;
 }
-
 .item:nth-child(even) {
   background: cornflowerblue;
 }
 
 /* is seudo selector 사용해보기 */
 /* 첫번째 코드를 두번째처럼 바꿀 수 있음.
-header나 nave가 있으면 그 안에 있는 button 선택해서 스타일 주기! */
+header나 nav가 있으면 그 안에 있는 button 선택해서 스타일 주기! */
+// header button,
+// nav button {
+//   width: 60px;
+//   height: 20px;
+//   background-color: tomato;
+// }
 :is(header, nav) button {
   width: 60px;
   height: 20px;
@@ -278,6 +234,11 @@ header나 nave가 있으면 그 안에 있는 button 선택해서 스타일 주�
 .exp {
   width: 100px;
   aspect-ratio: 16 / 9;
+  // aspect-ratio: 1 / 1; /* width and height are equal proportion */
+  // aspect-ratio: 2 / 1; /* width is twice the height*/
+  // aspect-ratio: 1 / 2; /* width is half the height */
+  // aspect-ratio: 16 / 9  /* typical video aspect ratio */
+  // aspect-ratio: auto 4 / 3; /* width:height, unless it's a replaced element */
 }
 
 /* sticky 활용해서 유저의 스크롤을 따라다니는 header 만들기*/
@@ -285,40 +246,26 @@ header나 nave가 있으면 그 안에 있는 button 선택해서 스타일 주�
   width: 150px;
   height: 400px;
   overflow: auto;
+  section {
+    background-color: tomato;
+    /* 2. 정의된 높이가 있는 컨테이너 안에 그 요소를 넣으면 된다! */
+    height: 70%;
+    width: 100%;
+    margin: 35px 0px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  aside {
+    background-color: teal;
+    height: 50px;
+    width: 100%;
+    /* 1. 원하는 요소에 position sticky를 넣고 */
+    position: sticky;
+    top: 0px;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
-
-#container2 section {
-  background-color: tomato;
-  /* 2. 정의된 높이가 있는 컨테이너 안에 그 요소를 넣으면 된다! */
-  height: 70%;
-  width: 100%;
-  margin: 35px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-#container2 aside {
-  background-color: teal;
-  height: 50px;
-  width: 100%;
-  /* 1. 원하는 요소에 position sticky를 넣고 */
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
-  text-align: center;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-/*# sourceMappingURL=style.css.map */
