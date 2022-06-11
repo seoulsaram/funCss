@@ -4,7 +4,7 @@
 💡 22.6월 현재 아직은 아래의 기능을 지원하는 브라우저가 없음에 주의!
 ```
 
-[이 비디오를 보고 작성함](https://www.youtube.com/watch?v=kkiLBF_YerM&t=81s)
+[이 비디오를 보고 작성함](https://www.youtube.com/watch?v=kkiLBF_YerM&t=81s) <br/>
 [이 글을 참조하여 작성함](https://ui.toast.com/weekly-pick/ko_20220603)
 
 ---
