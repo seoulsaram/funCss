@@ -6,7 +6,7 @@
 
 2. 터미널에 `npx sass --watch [scss파일명] [컴파일할 css파일명]` 실행
    - example
-     `bash npx sass --watch style.scss style.css `
+     `npx sass --watch style.scss style.css `
 
 ### [FunCss 1편 보러가기](/css1/README.md)
 
