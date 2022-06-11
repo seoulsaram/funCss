@@ -1,3 +1,5 @@
+# 최신 CSS기법을 모아둔 곳입니다.
+
 ### scss 컴파일 방법
 
 1. `npm install sass`
